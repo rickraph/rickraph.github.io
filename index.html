@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rickson Raphel — AI Engineer</title>
+  <meta name="description" content="Rickson Raphel — AI Engineer building production LLM systems: RAG pipelines, LangGraph agents, real-time voice agents and multimodal AI." />
+  <meta property="og:title" content="Rickson Raphel — AI Engineer" />
+  <meta property="og:description" content="Production LLM systems: RAG, agents, voice and multimodal AI." />
+  <meta name="theme-color" content="#010301" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23111'/><circle cx='32' cy='32' r='12' fill='%2300ff41'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Share+Tech+Mono&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1794379398" />
+</head>
+<body>
+  <!-- "Hello, World" terminal intro (first visit per session; click/scroll/key skips) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <pre class="intro-term"><span id="introText"></span><span class="intro-caret"></span></pre>
+    <span class="intro-skip">click anywhere to skip</span>
+  </div>
+
+  <!-- ambient background: drifting lights + digital rain -->
+  <div class="orbs" aria-hidden="true">
+    <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span><span class="orb o4"></span><span class="orb o5"></span>
+  </div>
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="spot" id="spot" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="brand"><span class="brand-dot"></span><span>RICKSON<span class="red">.</span></span></a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-btn">Hire Me</a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <!-- Tall section + sticky stage: scrolling splits the hero into its glass slabs,
+         then the stats panel rises out of the debris. -->
+    <section class="hero-scene" id="heroScene">
+      <div class="hero-sticky">
+        <div class="hero-stage" id="heroStage">
+      <div class="hero-panel" id="heroPanel">
+        <!-- glass cuts: drawn by script.js; the panel splits along exactly these lines -->
+        <svg class="hero-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        </svg>
+        <div class="hero-shine" aria-hidden="true"></div>
+
+        <div class="hero-copy">
+          <p class="kicker">AI Engineer &middot; Bengaluru, India</p>
+          <h1 class="hero-name">RICKSON<br />RAPHEL</h1>
+          <p class="hero-tags"><span>LLM Systems</span><i>/</i><span>RAG</span><i>/</i><span>AI Agents</span></p>
+          <p class="hero-sub">I design, build and deploy production AI &mdash; retrieval pipelines, agentic workflows and real-time voice systems that teams rely on every day.</p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-red">Explore My Work</a>
+            <a href="#contact" class="btn btn-dark">Let's Talk</a>
+          </div>
+        </div>
+
+        <div class="hero-visual has-photo" id="heroVisual">
+          <!-- thick glass frame with bevelled 3D edges; the portrait sits inside it -->
+          <div class="photo-card" id="photoCard">
+            <div class="pc-shadow" aria-hidden="true"></div>
+            <div class="pc-rim"></div>
+            <div class="pc-inner">
+              <div class="core" id="heroCore" aria-hidden="true">
+                <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+                <span class="core-dot"></span>
+                <span class="streak"></span>
+              </div>
+              <img src="assets/photo.png" alt="Rickson Raphel" class="hero-photo" id="heroPhoto" />
+            </div>
+            <div class="pc-gloss" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
+        <!-- slabs are generated here by script.js -->
+        <div class="slabs" id="slabs" aria-hidden="true"></div>
+        </div>
+
+        <!-- stats glass panel -->
+        <div class="stats glass" id="stats">
+          <div class="stat"><span class="stat-num" data-to="9" data-suffix="+">0</span><span class="stat-lbl">AI tools in production</span></div>
+          <div class="stat"><span class="stat-num" data-to="12">0</span><span class="stat-lbl">Languages supported</span></div>
+          <div class="stat"><span class="stat-num" data-to="85" data-suffix="%">0</span><span class="stat-lbl">RAG accuracy gain</span></div>
+        </div>
+        <div class="scroll-hint" id="scrollHint"><span></span>Scroll</div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects-scene" id="projects">
+      <div class="proj-sticky">
+      <div class="head reveal">
+        <p class="kicker">Open source</p>
+        <h2>PROJECTS<span>.</span></h2>
+        <p class="pill-sub">Personal builds &mdash; code on GitHub</p>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ WORK AT OLIVEBOARD (confidential, no links) ============ -->
+    <section class="section" id="work">
+      <div class="head reveal">
+        <p class="kicker">Professional work</p>
+        <h2>AT OLIVEBOARD<span>.</span></h2>
+        <p class="pill-sub">Production AI systems I build as an AI Engineer &middot; code is confidential</p>
+      </div>
+      <div class="project-grid work-grid" id="workGrid"></div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="about">
+        <div class="about-left">
+          <div class="head head-left reveal reveal-left">
+            <p class="kicker">Who I am</p>
+            <h2>ABOUT<br />RICKSON<span>.</span></h2>
+          </div>
+          <div class="glass about-card reveal reveal-left">
+            <p>
+              I'm an AI Engineer at <b>Oliveboard</b>, Bengaluru, with 1.5 years of experience building and deploying
+              production LLM applications — RAG pipelines, LangGraph agent workflows, real-time voice agents and multimodal AI.
+              I take models from prototype to hardened service, then deploy and keep them alive on Linux.
+            </p>
+            <p class="mini-label">Tools I work with</p>
+            <ul class="tags">
+              <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>LangChain</li><li>OpenAI</li><li>Gemini</li><li>ChromaDB</li><li>PostgreSQL</li><li>Docker</li>
+            </ul>
+            <div class="about-facts">
+              <div><b>Q1 2026</b><span>Employee of the Quarter</span></div>
+              <div><b>B.Tech</b><span>AI &amp; Data Science · CGPA 8.11</span></div>
+            </div>
+            <a href="Rickson_Raphel_Resume.pdf" class="btn btn-red btn-sm" download>Download Resume</a>
+          </div>
+        </div>
+
+        <div class="hang reveal reveal-right" aria-hidden="true">
+          <svg class="hang-string" viewBox="0 0 200 90"><path d="M100 4 L20 88 M100 4 L180 88" /><circle cx="100" cy="5" r="4" /></svg>
+          <div class="polaroid">
+            <div class="polaroid-img">
+              <img src="assets/photo.png" alt="" id="aboutPhoto" />
+              <span class="initials" id="aboutInitials">RR</span>
+            </div>
+            <div class="polaroid-cap">
+              <b>RICKSON RAPHEL</b>
+              <span>AI ENGINEER</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="services">
+      <div class="head reveal">
+        <p class="kicker">What I offer</p>
+        <h2>SERVICES<span>.</span></h2>
+      </div>
+      <div class="services glass reveal" id="serviceList"></div>
+      <p class="fine reveal">Scope and timelines are tailored to each project — reach out for a quote.</p>
+    </section>
+
+    <!-- ============ TECHNICAL SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="head reveal">
+        <p class="kicker">Proficiency</p>
+        <h2>TECHNICAL SKILLS<span>.</span></h2>
+      </div>
+      <div class="skills" id="skillList"></div>
+
+      <div class="head reveal arsenal-head">
+        <p class="kicker">Daily drivers</p>
+        <h2>MY ARSENAL<span>.</span></h2>
+      </div>
+      <div class="arsenal" id="arsenal"></div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="head reveal">
+        <p class="kicker">Let's get in touch</p>
+        <h2>CONTACT<span>.</span></h2>
+        <span class="underline"></span>
+      </div>
+
+      <div class="contact-wrap">
+        <div class="glass contact-bar reveal">
+          <a href="mailto:ricksonraphelofficial@gmail.com" class="cbar-item">
+            <span class="cbar-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span><small>EMAIL</small>ricksonraphelofficial@gmail.com</span>
+          </a>
+          <div class="cbar-socials">
+            <a href="https://www.linkedin.com/in/rickson-raphel-73b52431a/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            </a>
+            <a href="https://github.com/rickraph" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" class="fill"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="row">
+            <label>Your Name<input type="text" name="name" placeholder="Your Name" required /></label>
+            <label>Your Email<input type="email" name="email" placeholder="your.email@example.com" required /></label>
+          </div>
+          <label>Message &amp; Project Scope<textarea name="message" rows="5" placeholder="Let's build something intelligent together..." required></textarea></label>
+          <button type="submit" class="send">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Rickson Raphel</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- project detail modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card glass">
+      <button class="modal-x" id="modalX" aria-label="Close">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="script.js?v=1794379398"></script>
+</body>
+</html>
